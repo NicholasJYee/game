@@ -21,46 +21,31 @@ function create () {
   player = game.add.sprite(0,0, 'player');
   game.physics.arcade.enable(player);
   player.animations.add('down', [0, 1, 2, 3], 10, true);
-  player.animations.add('left', [5, 6, 7, 8], 10, true);
-  player.animations.add('right', [9, 10, 11, 12], 10, true);
-  player.animations.add('up', [13, 14, 15, 16], 10, true);    
+  player.animations.add('left', [4, 5, 6, 7], 10, true);
+  player.animations.add('right', [8, 9, 10, 11], 10, true);
+  player.animations.add('up', [12, 13, 14, 15], 10, true);    
   player.body.collideWorldBounds = true;
-
 
 }
 
 function update () {
-  console.log(player.body.velocity);
   player.body.velocity.x = 0;
   player.body.velocity.y = 0;
 
-  if (cursors.left.isDown)
-    {
-        //  Move to the left
-        player.body.velocity.x = -150;
-
-        player.animations.play('left');
-    }
-    else if (cursors.right.isDown)
-    {
-        //  Move to the right
-        player.body.velocity.x = 150;
-
-        player.animations.play('right');
-    }
-    else if (cursors.down.isDown)
-    {
-        //  Move to the right
-        player.body.velocity.y = 150;
-
-        player.animations.play('down');
-    }
-    else if (cursors.up.isDown)
-    {
-        //  Move to the right
-        player.body.velocity.y = -150;
-
-        player.animations.play('up');
-    }
+  if (cursors.down.isDown) {
+    player.body.velocity.y = 100;
+    player.animations.play('down');
+  } else if (cursors.left.isDown) {
+    player.body.velocity.x = -100;
+    player.animations.play('left');
+  } else if (cursors.right.isDown) {
+    player.body.velocity.x = 100;
+    player.animations.play('right');
+  } else if (cursors.up.isDown) {
+    player.body.velocity.y = -100;
+    player.animations.play('up');
+  } else {
+    player.animations.stop();
+  }
 
 }
