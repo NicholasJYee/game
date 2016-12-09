@@ -24,7 +24,6 @@ function create () {
   player.animations.add('left', [5, 6, 7, 8], 10, true);
   player.animations.add('right', [9, 10, 11, 12], 10, true);
   player.animations.add('up', [13, 14, 15, 16], 10, true);    
-  player.body.gravity.y = 300;
   player.body.collideWorldBounds = true;
 
 
@@ -32,6 +31,7 @@ function create () {
 
 function update () {
   player.body.velocity.x = 0;
+  player.body.velocity.y = 0;
 
   if (cursors.left.isDown)
     {
@@ -47,12 +47,19 @@ function update () {
 
         player.animations.play('right');
     }
-    else
+    else if (cursors.down.isDown)
     {
-        //  Stand still
-        player.animations.stop();
+        //  Move to the right
+        player.body.velocity.y = 150;
 
-        player.frame = 4;
+        player.animations.play('down');
+    }
+    else if (cursors.up.isDown)
+    {
+        //  Move to the right
+        player.body.velocity.y = -150;
+
+        player.animations.play('up');
     }
 
 }
