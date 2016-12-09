@@ -30,6 +30,7 @@ function create () {
 }
 
 function update () {
+  console.log(player.body.velocity);
   player.body.velocity.x = 0;
   player.body.velocity.y = 0;
 
