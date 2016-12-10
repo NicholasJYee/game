@@ -46,7 +46,7 @@ function create () {
   game.physics.arcade.enable(cat2);
   game.physics.arcade.enable(cat3);
 
-  game.time.events.repeat(Phaser.Timer.SECOND * Math.floor((Math.random() * 15) + 1), 10, moveCat, game);
+  game.time.events.repeat(Phaser.Timer.SECOND * Math.floor((Math.random() * 3) + 1), 10, moveCat, game);
 }
 
 function update () {
