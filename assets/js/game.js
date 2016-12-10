@@ -50,12 +50,12 @@ function create () {
   cat1.animations.add('right', [24, 25, 26], 10, true);
   cat1.animations.add('upright', [39, 40, 41], 10, true);
   cat1.animations.add('up', [36, 37, 38], 10, true);
-  cat1.animations.add('forward_jump', [6, 7, 8], 5, false);
-  cat1.animations.add('backward_jump', [42, 43, 44], 5, false);
+  cat1.animations.add('forward_jump', [6, 7, 8], 5, true);
+  cat1.animations.add('backward_jump', [42, 43, 44], 5, true);
   cat1.animations.add('backward_nap', [48, 49, 50], 2, true);
-  cat1.animations.add('forward_head_tilt', [54, 55, 56], 3, false);
+  cat1.animations.add('forward_head_tilt', [54, 55, 56], 3, true);
   cat1.animations.add('forward_nap', [60, 61, 62], 2, true);
-  cat1.animations.add('backward_head_tilt', [66, 67, 68], 3, false);
+  cat1.animations.add('backward_head_tilt', [66, 67, 68], 3, true);
   cat1.animations.add('lay_facing_side', [72, 73, 74], 2, true);
   cat1.animations.add('lay_facing_forward', [84, 85, 86], 2, true);
   cat2.animations.add('downleft', [3, 4, 5], 10, true);  
@@ -66,12 +66,12 @@ function create () {
   cat2.animations.add('right', [24, 25, 26], 10, true);
   cat2.animations.add('upright', [39, 40, 41], 10, true);
   cat2.animations.add('up', [36, 37, 38], 10, true);
-  cat2.animations.add('forward_jump', [6, 7, 8], 5, false);
-  cat2.animations.add('backward_jump', [42, 43, 44], 5, false);
+  cat2.animations.add('forward_jump', [6, 7, 8], 5, true);
+  cat2.animations.add('backward_jump', [42, 43, 44], 5, true);
   cat2.animations.add('backward_nap', [48, 49, 50], 2, true);
-  cat2.animations.add('forward_head_tilt', [54, 55, 56], 3, false);
+  cat2.animations.add('forward_head_tilt', [54, 55, 56], 3, true);
   cat2.animations.add('forward_nap', [60, 61, 62], 2, true);
-  cat2.animations.add('backward_head_tilt', [66, 67, 68], 3, false);
+  cat2.animations.add('backward_head_tilt', [66, 67, 68], 3, true);
   cat2.animations.add('lay_facing_side', [72, 73, 74], 2, true);
   cat2.animations.add('lay_facing_forward', [84, 85, 86], 2, true);
   cat3.animations.add('downleft', [3, 4, 5], 10, true);  
@@ -82,12 +82,12 @@ function create () {
   cat3.animations.add('right', [24, 25, 26], 10, true);
   cat3.animations.add('upright', [39, 40, 41], 10, true);
   cat3.animations.add('up', [36, 37, 38], 10, true);
-  cat3.animations.add('forward_jump', [6, 7, 8], 5, false);
-  cat3.animations.add('backward_jump', [42, 43, 44], 5, false);
+  cat3.animations.add('forward_jump', [6, 7, 8], 5, true);
+  cat3.animations.add('backward_jump', [42, 43, 44], 5, true);
   cat3.animations.add('backward_nap', [48, 49, 50], 2, true);
-  cat3.animations.add('forward_head_tilt', [54, 55, 56], 3, false);
+  cat3.animations.add('forward_head_tilt', [54, 55, 56], 3, true);
   cat3.animations.add('forward_nap', [60, 61, 62], 2, true);
-  cat3.animations.add('backward_head_tilt', [66, 67, 68], 3, false);
+  cat3.animations.add('backward_head_tilt', [66, 67, 68], 3, true);
   cat3.animations.add('lay_facing_side', [72, 73, 74], 2, true);
   cat3.animations.add('lay_facing_forward', [84, 85, 86], 2, true);
 
@@ -100,9 +100,9 @@ function create () {
   moveCat1();
   moveCat2();
   moveCat3();
-  game.time.events.loop(Phaser.Timer.SECOND * Math.floor((Math.random() * 15) + 1), moveCat1, game);
-  game.time.events.loop(Phaser.Timer.SECOND * Math.floor((Math.random() * 15) + 1), moveCat2, game);
-  game.time.events.loop(Phaser.Timer.SECOND * Math.floor((Math.random() * 15) + 1), moveCat3, game);
+  game.time.events.loop(Phaser.Timer.SECOND * Math.floor((Math.random() * 20) + 1), moveCat1, game);
+  game.time.events.loop(Phaser.Timer.SECOND * Math.floor((Math.random() * 20) + 1), moveCat2, game);
+  game.time.events.loop(Phaser.Timer.SECOND * Math.floor((Math.random() * 20) + 1), moveCat3, game);
 
 }
 
