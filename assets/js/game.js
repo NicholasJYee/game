@@ -97,9 +97,9 @@ function create () {
   cat1.body.collideWorldBounds = true;
   cat2.body.collideWorldBounds = true;
   cat3.body.collideWorldBounds = true;
-  game.time.events.repeat(Phaser.Timer.SECOND * Math.floor((Math.random() * 2) + 1), 10, moveCat1, game);
-  game.time.events.repeat(Phaser.Timer.SECOND * Math.floor((Math.random() * 15) + 1), 10, moveCat2, game);
-  game.time.events.repeat(Phaser.Timer.SECOND * Math.floor((Math.random() * 15) + 1), 10, moveCat3, game);
+  game.time.events.loop(Phaser.Timer.SECOND * Math.floor((Math.random() * 2) + 1), moveCat1, game);
+  game.time.events.loop(Phaser.Timer.SECOND * Math.floor((Math.random() * 15) + 1), moveCat2, game);
+  game.time.events.loop(Phaser.Timer.SECOND * Math.floor((Math.random() * 15) + 1), moveCat3, game);
 
 }
 

@@ -1,6 +1,5 @@
 function moveCat1 () {
-  // var i = Math.floor((Math.random() * 16) + 1);
-  var i = 10;
+  var i = Math.floor((Math.random() * 17) + 1);
   if (i === 1) {
     cat1.body.velocity.x = 0;
     cat1.body.velocity.y = 0;
@@ -39,25 +38,36 @@ function moveCat1 () {
     cat1.animations.play('upleft');
   } else if (i === 10) {
     cat1.body.velocity.x = 0;
-    cat1.body.velocity.y = -50; 
+    cat1.body.velocity.y = 0;
+    cat1.animations.play('forward_jump');    
   } else if (i === 11) {
     cat1.body.velocity.x = 0;
-    cat1.body.velocity.y = -50; 
+    cat1.body.velocity.y = 0;
+    cat1.animations.play('backward_jump');
   } else if (i === 12) {
     cat1.body.velocity.x = 0;
-    cat1.body.velocity.y = -50; 
+    cat1.body.velocity.y = 0;    
+    cat1.animations.play('backward_nap');
   } else if (i === 13) {
     cat1.body.velocity.x = 0;
-    cat1.body.velocity.y = -50; 
+    cat1.body.velocity.y = 0;    
+    cat1.animations.play('forward_head_tilt');
   } else if (i === 14) {
     cat1.body.velocity.x = 0;
-    cat1.body.velocity.y = -50; 
+    cat1.body.velocity.y = 0;    
+    cat1.animations.play('forward_nap');
   } else if (i === 15) {
     cat1.body.velocity.x = 0;
-    cat1.body.velocity.y = -50; 
+    cat1.body.velocity.y = 0;    
+    cat1.animations.play('backward_head_tilt');
   } else if (i === 16) {
     cat1.body.velocity.x = 0;
-    cat1.body.velocity.y = -50; 
+    cat1.body.velocity.y = 0;    
+    cat1.animations.play('lay_facing_side');
+  } else if (i === 17) {
+    cat1.body.velocity.x = 0;
+    cat1.body.velocity.y = 0;    
+    cat1.animations.play('lay_facing_forward');
   }
 
 }
