@@ -58,7 +58,6 @@ function create () {
   cat1.animations.add('backward_head_tilt', [66, 67, 68], 3, false);
   cat1.animations.add('lay_facing_side', [72, 73, 74], 2, true);
   cat1.animations.add('lay_facing_forward', [84, 85, 86], 2, true);
-
   cat2.animations.add('downleft', [3, 4, 5], 10, true);  
   cat2.animations.add('down', [0, 1, 2], 10, true);
   cat2.animations.add('downright', [27, 28, 29], 10, true);
@@ -75,7 +74,6 @@ function create () {
   cat2.animations.add('backward_head_tilt', [66, 67, 68], 3, false);
   cat2.animations.add('lay_facing_side', [72, 73, 74], 2, true);
   cat2.animations.add('lay_facing_forward', [84, 85, 86], 2, true);
-
   cat3.animations.add('downleft', [3, 4, 5], 10, true);  
   cat3.animations.add('down', [0, 1, 2], 10, true);
   cat3.animations.add('downright', [27, 28, 29], 10, true);
@@ -93,14 +91,13 @@ function create () {
   cat3.animations.add('lay_facing_side', [72, 73, 74], 2, true);
   cat3.animations.add('lay_facing_forward', [84, 85, 86], 2, true);
 
-
   game.physics.arcade.enable(cat1);
   game.physics.arcade.enable(cat2);
   game.physics.arcade.enable(cat3);
   cat1.body.collideWorldBounds = true;
   cat2.body.collideWorldBounds = true;
   cat3.body.collideWorldBounds = true;
-  game.time.events.repeat(Phaser.Timer.SECOND * Math.floor((Math.random() * 15) + 1), 10, moveCat1, game);
+  game.time.events.repeat(Phaser.Timer.SECOND * Math.floor((Math.random() * 2) + 1), 10, moveCat1, game);
   game.time.events.repeat(Phaser.Timer.SECOND * Math.floor((Math.random() * 15) + 1), 10, moveCat2, game);
   game.time.events.repeat(Phaser.Timer.SECOND * Math.floor((Math.random() * 15) + 1), 10, moveCat3, game);
 
@@ -139,8 +136,7 @@ function update () {
     player.body.velocity.y = -100;
     player.animations.play('up');
   } else {
-    // player.animations.stop();
-    player.animations.play('lay_facing_forward');
+    player.animations.stop();
   }
 
 }
