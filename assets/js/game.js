@@ -50,14 +50,14 @@ function create () {
   player.animations.add('right', [24, 25, 26], 10, true);
   player.animations.add('upright', [39, 40, 41], 10, true);
   player.animations.add('up', [36, 37, 38], 10, true);
-  player.animations.add('forward_jump', [6, 7, 8], 10, true);
-  player.animations.add('backward_jump', [6, 7, 8], 10, true);
-  player.animations.add('backward_nap', [48, 49, 50], 10, true);
-  player.animations.add('forward_head_tilt', [54, 55, 56], 10, true);
-  player.animations.add('forward_nap', [57, 58, 59], 10, true);
-  player.animations.add('backward_head_tilt', [63, 64, 65], 10, true);
-  player.animations.add('lay_facing_side', [66, 67, 68], 10, true);
-  player.animations.add('lay_facing_forward', [72, 73, 74], 10, true);
+  player.animations.add('forward_jump', [6, 7, 8], 5, false);
+  player.animations.add('backward_jump', [42, 43, 44], 5, false);
+  player.animations.add('backward_nap', [48, 49, 50], 2, true);
+  player.animations.add('forward_head_tilt', [54, 55, 56], 3, false);
+  player.animations.add('forward_nap', [60, 61, 62], 2, true);
+  player.animations.add('backward_head_tilt', [66, 67, 68], 3, false);
+  player.animations.add('lay_facing_side', [72, 73, 74], 2, true);
+  player.animations.add('lay_facing_forward', [84, 85, 86], 2, true);
 
 
   game.physics.arcade.enable(cat1);
@@ -105,7 +105,8 @@ function update () {
     player.body.velocity.y = -100;
     player.animations.play('up');
   } else {
-    player.animations.stop();
+    // player.animations.stop();
+    player.animations.play('lay_facing_forward');
   }
 
 }
