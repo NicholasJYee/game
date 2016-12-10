@@ -9,8 +9,8 @@ var cursors = {};
 
 function preload () {
  game.load.image('sky', 'assets/images/textures/sky.png');
- game.load.spritesheet('cat1', 'assets/images/sprites/male.png', 61, 121);
- game.load.spritesheet('player', 'assets/images/sprites/cat1.png', 32, 32);
+ game.load.spritesheet('player', 'assets/images/sprites/male.png', 61, 121);
+ game.load.spritesheet('cat1', 'assets/images/sprites/cat1.png', 32, 32);
  game.load.spritesheet('cat2', 'assets/images/sprites/cat2.png', 32, 32);
  game.load.spritesheet('cat3', 'assets/images/sprites/cat3.png', 32, 32);  
 }
@@ -42,22 +42,56 @@ function create () {
   cat1 = game.add.sprite(50,50, 'cat1');
   cat2 = game.add.sprite(100,100, 'cat2');
   cat3 = game.add.sprite(150,150, 'cat3');
-  player.animations.add('downleft', [3, 4, 5], 10, true);  
-  player.animations.add('down', [0, 1, 2], 10, true);
-  player.animations.add('downright', [27, 28, 29], 10, true);
-  player.animations.add('left', [12, 13, 14], 10, true);
-  player.animations.add('upleft', [15, 16, 17], 10, true);
-  player.animations.add('right', [24, 25, 26], 10, true);
-  player.animations.add('upright', [39, 40, 41], 10, true);
-  player.animations.add('up', [36, 37, 38], 10, true);
-  player.animations.add('forward_jump', [6, 7, 8], 5, false);
-  player.animations.add('backward_jump', [42, 43, 44], 5, false);
-  player.animations.add('backward_nap', [48, 49, 50], 2, true);
-  player.animations.add('forward_head_tilt', [54, 55, 56], 3, false);
-  player.animations.add('forward_nap', [60, 61, 62], 2, true);
-  player.animations.add('backward_head_tilt', [66, 67, 68], 3, false);
-  player.animations.add('lay_facing_side', [72, 73, 74], 2, true);
-  player.animations.add('lay_facing_forward', [84, 85, 86], 2, true);
+  cat1.animations.add('downleft', [3, 4, 5], 10, true);  
+  cat1.animations.add('down', [0, 1, 2], 10, true);
+  cat1.animations.add('downright', [27, 28, 29], 10, true);
+  cat1.animations.add('left', [12, 13, 14], 10, true);
+  cat1.animations.add('upleft', [15, 16, 17], 10, true);
+  cat1.animations.add('right', [24, 25, 26], 10, true);
+  cat1.animations.add('upright', [39, 40, 41], 10, true);
+  cat1.animations.add('up', [36, 37, 38], 10, true);
+  cat1.animations.add('forward_jump', [6, 7, 8], 5, false);
+  cat1.animations.add('backward_jump', [42, 43, 44], 5, false);
+  cat1.animations.add('backward_nap', [48, 49, 50], 2, true);
+  cat1.animations.add('forward_head_tilt', [54, 55, 56], 3, false);
+  cat1.animations.add('forward_nap', [60, 61, 62], 2, true);
+  cat1.animations.add('backward_head_tilt', [66, 67, 68], 3, false);
+  cat1.animations.add('lay_facing_side', [72, 73, 74], 2, true);
+  cat1.animations.add('lay_facing_forward', [84, 85, 86], 2, true);
+
+  cat2.animations.add('downleft', [3, 4, 5], 10, true);  
+  cat2.animations.add('down', [0, 1, 2], 10, true);
+  cat2.animations.add('downright', [27, 28, 29], 10, true);
+  cat2.animations.add('left', [12, 13, 14], 10, true);
+  cat2.animations.add('upleft', [15, 16, 17], 10, true);
+  cat2.animations.add('right', [24, 25, 26], 10, true);
+  cat2.animations.add('upright', [39, 40, 41], 10, true);
+  cat2.animations.add('up', [36, 37, 38], 10, true);
+  cat2.animations.add('forward_jump', [6, 7, 8], 5, false);
+  cat2.animations.add('backward_jump', [42, 43, 44], 5, false);
+  cat2.animations.add('backward_nap', [48, 49, 50], 2, true);
+  cat2.animations.add('forward_head_tilt', [54, 55, 56], 3, false);
+  cat2.animations.add('forward_nap', [60, 61, 62], 2, true);
+  cat2.animations.add('backward_head_tilt', [66, 67, 68], 3, false);
+  cat2.animations.add('lay_facing_side', [72, 73, 74], 2, true);
+  cat2.animations.add('lay_facing_forward', [84, 85, 86], 2, true);
+
+  cat3.animations.add('downleft', [3, 4, 5], 10, true);  
+  cat3.animations.add('down', [0, 1, 2], 10, true);
+  cat3.animations.add('downright', [27, 28, 29], 10, true);
+  cat3.animations.add('left', [12, 13, 14], 10, true);
+  cat3.animations.add('upleft', [15, 16, 17], 10, true);
+  cat3.animations.add('right', [24, 25, 26], 10, true);
+  cat3.animations.add('upright', [39, 40, 41], 10, true);
+  cat3.animations.add('up', [36, 37, 38], 10, true);
+  cat3.animations.add('forward_jump', [6, 7, 8], 5, false);
+  cat3.animations.add('backward_jump', [42, 43, 44], 5, false);
+  cat3.animations.add('backward_nap', [48, 49, 50], 2, true);
+  cat3.animations.add('forward_head_tilt', [54, 55, 56], 3, false);
+  cat3.animations.add('forward_nap', [60, 61, 62], 2, true);
+  cat3.animations.add('backward_head_tilt', [66, 67, 68], 3, false);
+  cat3.animations.add('lay_facing_side', [72, 73, 74], 2, true);
+  cat3.animations.add('lay_facing_forward', [84, 85, 86], 2, true);
 
 
   game.physics.arcade.enable(cat1);
