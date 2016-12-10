@@ -39,14 +39,19 @@ function create () {
   player.animations.add('up', [56, 57, 58, 59, 60, 61, 62, 63], 10, true);
   player.body.collideWorldBounds = true;
 
-  cat1 = game.add.sprite(0,0, 'cat1');
-  cat2 = game.add.sprite(50,0, 'cat2');
-  cat3 = game.add.sprite(100,0, 'cat3');
+  cat1 = game.add.sprite(50,50, 'cat1');
+  cat2 = game.add.sprite(100,100, 'cat2');
+  cat3 = game.add.sprite(150,150, 'cat3');
   game.physics.arcade.enable(cat1);
   game.physics.arcade.enable(cat2);
   game.physics.arcade.enable(cat3);
+  cat1.body.collideWorldBounds = true;
+  cat2.body.collideWorldBounds = true;
+  cat3.body.collideWorldBounds = true;
+  game.time.events.repeat(Phaser.Timer.SECOND * Math.floor((Math.random() * 15) + 1), 10, moveCat1, game);
+  game.time.events.repeat(Phaser.Timer.SECOND * Math.floor((Math.random() * 15) + 1), 10, moveCat2, game);
+  game.time.events.repeat(Phaser.Timer.SECOND * Math.floor((Math.random() * 15) + 1), 10, moveCat3, game);
 
-  game.time.events.repeat(Phaser.Timer.SECOND * Math.floor((Math.random() * 3) + 1), 10, moveCat, game);
 }
 
 function update () {
